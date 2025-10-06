@@ -7,7 +7,7 @@ An integrated AI assistant provides real-time coding help, making it a smart and
 ## Key Features :
 
 ### Folder & Playground Management:
-Create, organize, and manage multiple coding projects in a structured workspace.
+Create and organize folders to neatly group your playgrounds.
 
 ### Multi-Language Code Editor:
 Write and execute code in multiple programming languages using the Judge0 API.
