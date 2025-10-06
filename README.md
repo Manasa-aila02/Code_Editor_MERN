@@ -1,34 +1,42 @@
-# Code Desk - Full-Stack Web-Based Code Editor
+CodeAI Studio – AI-Integrated Web-Based Code Editor
 
-**Code Desk** is a full-stack, web-based code editor application built using the MERN stack — MongoDB, Express.js, React, and Node.js. It provides users with a personalized platform to write, run, and manage code efficiently in multiple programming languages.
+CodeAI Studio is a full-stack AI-powered coding platform built using the MERN stack (MongoDB, Express, React, Node.js).
+It allows users to create folders, manage playgrounds, and write or execute code in multiple programming languages — all within an interactive and intelligent web interface.
+An integrated AI assistant provides real-time coding help, making it a smart and efficient environment for developers and learners alike.
 
-## Features
+Key Features :
 
-- User authentication: Register and log in to your personalized workspace  
-- Folder management: Create and organize folders to keep your projects structured  
-- Playgrounds: Add multiple coding playgrounds inside folders for writing code  
-- Code editor interface: Powered by CodeMirror for syntax highlighting and an intuitive editing experience  
-- Real-time code execution: Integrated with the Judge0 API to compile and run code in various languages  
-- Import/export functionality: Easily import or export code, input, and output files  
-- Responsive UI: Built with React for smooth, interactive user experience  
-- Backend API: Node.js and Express handle routing, API requests, and data management  
-- Data persistence: MongoDB stores user details, folder structures, and playground data  
+Folder & Playground Management:
+Create, organize, and manage multiple coding projects in a structured workspace.
 
-## Technologies Used
+Multi-Language Code Editor:
+Write and execute code in multiple programming languages using the Judge0 API.
 
-- **Frontend:** React, CodeMirror  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Code Execution API:** Judge0 API 
+Real-Time Code Execution:
+Run programs instantly and view input/output directly in the browser.
 
+Import & Export Functionality:
+Easily save, upload, or download your code and I/O files for efficient project management.
 
-## How to Run the Project
+AI Assistant Panel:
+Get AI-driven coding guidance, explanations, and problem-solving support directly inside the editor.
 
-1. Clone the repository  
-2. Install dependencies in both frontend and backend folders (`npm install`)  
-3. Set up MongoDB connection  
-4. Configure environment variables including Judge0 API key  
-5. Run backend server (`npm start` or `node server.js`)  
-6. Run frontend (`npm start`)  
-7. Open `http://localhost:3000` in your browser  
----
+Full-Stack Integration:
+Built using React (frontend), Node.js + Express (backend), and MongoDB (database).
+
+Tech Stack:
+Component	Technology
+Frontend - React.js, HTML5, CSS3, JavaScript
+Backend -	Node.js, Express.js
+Database -	MongoDB
+API Integration -	Judge0 API (for code execution)
+AI Integration -	Gemini API (for coding assistance)
+
+How to Run the Project:
+Clone the repository
+Install dependencies in both frontend and backend folders (npm install)
+Set up MongoDB connection
+Configure environment variables including Judge0 API key
+Run backend server (npm start or node server.js)
+Run frontend (npm start)
+Open http://localhost:3000 in your browser
