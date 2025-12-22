@@ -2,7 +2,8 @@ const Playground = require("../models/Playgrounds");
 const Folder = require("../models/Folders");
 
 const getPlaygrounds = async (req, res) => {
-  const { folderId, userId } = req.params; 
+  const { folderId } = req.params; 
+  const userId = req.user.id;
   try {
       const folder = await Folder.findOne({ _id: folderId, userId }) 
           .populate("playgrounds");
@@ -20,8 +21,9 @@ const getPlaygrounds = async (req, res) => {
 
 
 const createPlayground = async (req, res) => {
-  const { folderId, userId, title, language, code } = req.body;
-
+  const { title, language, code } = req.body;
+  const userId = req.user.id;
+  const folderId = req.params.folderId;
   if (!folderId || !title) {
       return res.status(400).json({ msg: "Folder ID and Title are required." });
   }

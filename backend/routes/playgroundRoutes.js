@@ -9,7 +9,7 @@ const {
 
 const router = express.Router();
 
-router.post("/", createPlayground);
+router.post("/:folderId", createPlayground);
 router.get("/folders/:folderId/playgrounds", getPlaygrounds);
 router.put("/:playgroundId/:folderId", editPlayground);
 router.put("/:playgroundId", editPlaygroundTitle);

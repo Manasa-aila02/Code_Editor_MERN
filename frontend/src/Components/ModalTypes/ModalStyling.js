@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components'
-import { NewFolder, EditFolder, NewPlayground, EditPlaygroundTitle, Loading} from './IndexModal'
+import { NewFolder, EditFolder, NewPlayground, EditPlaygroundTitle, Loading, ProfileModal, DeleteAccountModal, LogoutModal} from './IndexModal'
 import { ModalContext } from '../context/ModalContext'
 
 const ModalContainer = styled.div`
@@ -71,6 +71,10 @@ export const Modal = () => {
         {modalType === 3 && <EditFolder />}
         {modalType === 4 && <EditPlaygroundTitle />}
         {modalType === 5 && <Loading />}
+        {modalType === 6 && <ProfileModal />}
+        {modalType === 7 && <DeleteAccountModal />}
+        {modalType === 8 && <LogoutModal />}
+
       </ModalContent>
     </ModalContainer>
   )

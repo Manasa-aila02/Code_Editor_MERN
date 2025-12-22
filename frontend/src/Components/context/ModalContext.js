@@ -21,10 +21,15 @@ function ModalProvider({children}){
         setIsOpenModal({ ...initialModalFields})
     }
 
+    const resetModal = () => {
+    setIsOpenModal({ show: false, modalType: null, identifiers: {} });
+  };
+
     const ModalFeatures = {
         isOpenModal : isOpenModal,
         openModal: openModal,
         closeModal: closeModal,
+        resetModal: resetModal,
     }
 
     return(

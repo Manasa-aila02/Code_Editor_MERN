@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import CodeEditor from './CodeEditor'
 import {useParams} from 'react-router-dom'
 import styled from 'styled-components'
@@ -6,7 +6,8 @@ import { BiEditAlt, BiImport, BiExport} from 'react-icons/bi'
 import { ModalContext } from '../context/ModalContext'
 import Select from 'react-select';
 import { languageMap} from '../context/PlaygroundContext'
-
+// import ProfileIconDropdown from "../Home/ProfileIcon";
+import AIChatPanel from "./AIChatPanel";
 const StyledEditorContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,6 +101,7 @@ const LowerToolBar = styled.div`
     align-items: center;
     gap: 0.7rem;
     color: black;
+    cursor:pointer;
   }
   button:first-child{
     background: none;
@@ -127,9 +129,11 @@ const EditorContainer = ({
   runCode,
   getFile,
 }) => {
+  
 
   const { openModal } = useContext(ModalContext)
   const { folderId, playgroundId } = useParams();
+  const [isAIOpen, setIsAIOpen] = useState(false);
   const themeOptions = [
     { value: 'githubDark', label: 'githubDark' },
     { value: 'githubLight', label: 'githubLight' },
@@ -171,6 +175,14 @@ const EditorContainer = ({
     return languageOptions[0];
   })
 
+  useEffect(() => {
+    const selected = languageOptions.find(opt => opt.value === currentLanguage);
+    if (selected) {
+      setLanguage(selected);
+    }
+  }, [currentLanguage]);
+
+  // console.log("currentLanguage in Editor ",setCurrentLangauge);
   return (
     <StyledEditorContainer>
      { <UpperToolBar>
@@ -220,10 +232,18 @@ const EditorContainer = ({
         <a href={`data:text/plain;charset=utf-8,${encodeURIComponent(currentCode)}`} download="code.txt">
           <BiExport /> Export Code
         </a>
+
+        <button 
+        style ={{background: "none"}}
+        onClick = {() => setIsAIOpen(true)}>
+          🤖 AI Assistant
+        </button>
+        {/* <AIChatPanel /> */}
         <SaveAndRunButton onClick={runCode}>Run Code</SaveAndRunButton>
       </LowerToolBar>
+      <AIChatPanel isOpen = {isAIOpen} onClose = {() => setIsAIOpen(false)}/>
     </StyledEditorContainer >
   )
 }
 
-export default EditorContainer
+export default EditorContainer 
